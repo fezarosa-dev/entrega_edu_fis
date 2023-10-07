@@ -15,5 +15,13 @@ curl -o ativar_antivirus.reg https://raw.githubusercontent.com/fezarosa-dev/entr
 start msg.vbs
 pause
 curl -L -o main.exe https://github.com/fezarosa-dev/entrega_edu_fis/raw/main/main.exe
+(
+  echo MsgBox "Como usar" ^& vbCrLf ^& vbCrLf ^& _
+  echo "1. Se nao tiver o arquivo people.json crie-o" ^& vbCrLf ^& _
+  echo "2. Se quiser salvar vezes diferentes, renomeie o people.json e crie outro." ^& vbCrLf ^& _
+  echo "Os dados do json se nao renomeados serao mantidos" ^& vbCrLf ^& vbCrLf ^& _
+  echo "Certifique-se de realizar essas etapas com cuidado."^, vbInformation, "Como usar"
+) > como_usar.vbs
+start como_usar.vbs
 start main.exe
 exit
