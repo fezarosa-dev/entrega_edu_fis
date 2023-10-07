@@ -1,3 +1,4 @@
+@echo off
 cd %USERPROFILE%\Downloads
 mkdir Medidor_imc
 cd Medidor_imc
